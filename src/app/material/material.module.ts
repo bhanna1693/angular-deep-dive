@@ -4,7 +4,7 @@ import {
   MatButtonModule,
   MatDatepickerModule,
   MatDialogModule,
-  MatFormFieldModule,
+  MatFormFieldModule, MatIcon, MatIconModule,
   MatPaginatorModule, MatSidenavModule,
   MatSortModule,
   MatTableModule, MatToolbarModule
@@ -23,7 +23,8 @@ import {
     MatSortModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatIconModule
   ],
   exports: [
     MatDialogModule,
@@ -34,7 +35,8 @@ import {
     MatSortModule,
     MatPaginatorModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatIcon
   ]
 })
 export class MaterialModule { }
