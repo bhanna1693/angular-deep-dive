@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AboutInvestingComponent} from './about-investing/about-investing.component';
 import {HomeComponent} from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 
 const appRoutes: Routes = [
@@ -16,14 +17,17 @@ const appRoutes: Routes = [
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
   },
-  // { path: '**', component: PageNotFoundComponent }
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      {enableTracing: true} // <-- debugging purposes only
+      // {enableTracing: true} // <-- debugging purposes only
     )
   ],
   exports: [

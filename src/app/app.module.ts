@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AboutInvestingComponent} from './about-investing/about-investing.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HomeComponent} from './home/home.component';
     NavComponent,
     FooterComponent,
     AboutInvestingComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
