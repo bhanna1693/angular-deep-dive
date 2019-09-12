@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (min-width: 575px) {
+  form {
+    max-width: 25em;
+  }
+}

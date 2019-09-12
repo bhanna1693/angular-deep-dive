@@ -1,1 +1,21 @@
-<p>about-investing works!</p>
+<p>Investing is simple!</p>
+
+<p><strong><i>Sign Up Here</i></strong> to learn like a pro</p>
+
+<form [formGroup]="signUpForm">
+  <mat-form-field>
+    <input type="text" matInput formControlName="FirstName" placeholder="First Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" matInput formControlName="LastName" placeholder="Last Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" matInput formControlName="Email" placeholder="Email" required>
+    <mat-error *ngIf="signUpForm.get('Email').hasError('required')">Email is required</mat-error>
+    <mat-error *ngIf="signUpForm.get('Email').hasError('email')">Email format invalid</mat-error>
+  </mat-form-field>
+
+  <button style="margin-top: 1em" mat-raised-button color="primary" (click)="onSubmit()">Start Learning like a Pro</button>
+</form>
