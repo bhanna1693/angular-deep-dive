@@ -1,15 +1,29 @@
 :host {
   display: grid;
-  grid-template: "nav" min-content "body" 1fr / 1fr;
-
-  height: 100vh;
-  width: 100vw;
+  grid-template:
+    "nav" min-content
+    "body" 1fr / 1fr;
 }
 
 app-nav {
   grid-area: nav;
+  height: 5vh;
 }
 
-mat-sidenav {
+mat-sidenav-container {
   grid-area: body;
+  display: grid;
+  grid-template:
+    "main" 1fr "footer" min-content / 1fr;
+}
+
+section {
+  grid-area: main;
+  height: 90vh;
+
+}
+
+app-footer {
+  grid-area: footer;
+  height: 5vh;
 }
