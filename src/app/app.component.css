@@ -7,7 +7,6 @@
 
 app-nav {
   grid-area: nav;
-  height: 5vh;
 }
 
 mat-sidenav-container {
@@ -19,11 +18,10 @@ mat-sidenav-container {
 
 section {
   grid-area: main;
-  height: 90vh;
+  height: 91vh;
 
 }
 
 app-footer {
   grid-area: footer;
-  height: 5vh;
 }
