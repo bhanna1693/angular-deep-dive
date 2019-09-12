@@ -1,10 +1,9 @@
 <app-nav></app-nav>
 <mat-sidenav-container>
-  <mat-sidenav [(opened)]="isSideNavOpen" position="end">SideNav</mat-sidenav>
+  <mat-sidenav [opened]="navService.isSideNavOpen" position="end">SideNav</mat-sidenav>
   <mat-sidenav-content>
     <section>
-      Main
-      <button mat-button (click)="isSideNavOpen = !isSideNavOpen">Toggle Side Nav</button>
+      <h3>Want to start <strong><i>Investing like a Pro?</i></strong></h3>
 
     </section>
     <app-footer></app-footer>

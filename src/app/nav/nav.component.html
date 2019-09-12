@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    Invest Like a Pro
+  <mat-toolbar-row style="display: flex; justify-content: space-between">
+    <span>Invest Like a Pro</span>
+    <button mat-button (click)="navService.isSideNavOpen = !navService.isSideNavOpen">Toggle Side Nav</button>
   </mat-toolbar-row>
 </mat-toolbar>

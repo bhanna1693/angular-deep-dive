@@ -19,7 +19,7 @@ mat-sidenav-container {
 section {
   grid-area: main;
   height: 91vh;
-
+  padding: 0 2em;
 }
 
 app-footer {
