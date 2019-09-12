@@ -1,0 +1,15 @@
+:host {
+  display: grid;
+  grid-template: "nav" min-content "body" 1fr / 1fr;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+app-nav {
+  grid-area: nav;
+}
+
+mat-sidenav {
+  grid-area: body;
+}

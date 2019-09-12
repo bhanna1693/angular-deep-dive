@@ -1,1 +1,8 @@
 <app-nav></app-nav>
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="isSideNavOpen" position="end">SideNav</mat-sidenav>
+  <section>
+    Main
+    <button mat-button (click)="isSideNavOpen = !isSideNavOpen">Toggle Side Nav</button>
+  </section>
+</mat-sidenav-container>
