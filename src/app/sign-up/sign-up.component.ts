@@ -3,10 +3,10 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-about-investing',
-  templateUrl: './about-investing.component.html',
-  styleUrls: ['./about-investing.component.css']
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.css']
 })
-export class AboutInvestingComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   isSubmitted = false;
 

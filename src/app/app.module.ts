@@ -8,17 +8,17 @@ import {MaterialModule} from './material/material.module';
 import {FooterComponent} from './footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {AboutInvestingComponent} from './about-investing/about-investing.component';
+import {SignUpComponent} from './sign-up/sign-up.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    AboutInvestingComponent,
+    SignUpComponent,
     HomeComponent,
     PageNotFoundComponent
   ],

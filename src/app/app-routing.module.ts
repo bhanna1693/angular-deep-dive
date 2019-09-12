@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AboutInvestingComponent} from './about-investing/about-investing.component';
+import {SignUpComponent} from './sign-up/sign-up.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 
 const appRoutes: Routes = [
   {
-    path: 'about',
-    component: AboutInvestingComponent
+    path: 'sign-up',
+    component: SignUpComponent
   },
   {
     path: 'home',
