@@ -1,6 +1,6 @@
-<app-nav></app-nav>
-<mat-sidenav-container>
-  <mat-sidenav [(opened)]="navService.isSideNavOpen" position="end">SideNav</mat-sidenav>
+<app-nav (handleSideNavClick)="openSideNav()"></app-nav>
+<mat-sidenav-container (backdropClick)="closeSideNav()">
+  <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" position="end">SideNav</mat-sidenav>
   <mat-sidenav-content>
     <section>
       <router-outlet></router-outlet>

@@ -12,6 +12,8 @@ import {SignUpComponent} from './sign-up/sign-up.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

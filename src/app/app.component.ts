@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {NavigationService} from './services/navigation.service';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSidenav} from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,20 @@ import {NavigationService} from './services/navigation.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  isSideNavOpen = false;
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
 
-  constructor(private navService: NavigationService) {
+  constructor() {
   }
 
   ngOnInit(): void {
+  }
 
+  openSideNav() {
+    this.sidenav.open();
+  }
+
+  closeSideNav() {
+    this.sidenav.close();
   }
 
 }
