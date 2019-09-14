@@ -15,7 +15,7 @@ export class InvestLandingPageComponent implements OnInit {
 
   ngOnInit() {
     console.log('simple date', new Date(2019, 9, 13));
-    this.getTimeSeriesDaily('AAPL');
+    this.getTimeSeriesDaily('GOOG');
   }
 
   getTimeSeriesDaily(stockSymbol: string) {
