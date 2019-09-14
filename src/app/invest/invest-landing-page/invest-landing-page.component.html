@@ -1,7 +1,7 @@
-<p>invest-landing-page works!</p>
+<h3>Stock Chart</h3>
 
-{{stockIntraday | json}}
-
-
-{{stockDaily | json}}
-
+<igx-financial-chart
+  [dataSource]="stockDailyDisplay"
+  width="850px"
+  height="600px">
+</igx-financial-chart>

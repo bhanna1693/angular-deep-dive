@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {AlphavantageResponse} from '../models/alphavantage.model';
+import {AlphavantageDailyResponse, AlphavantageIntradayResponse} from '../models/alphavantage.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class AlphavantageService {
   getTimeSeriesIntraDay(stockSymbol: string,
                         timeInterval: '1min' | '5min' | '15min' | '30min' | '60min' = '5min',
                         outputSize: 'compact' | 'full' = 'compact') {
-    return this.http.get<AlphavantageResponse>(this.apiURL, {
+    return this.http.get<AlphavantageIntradayResponse>(this.apiURL, {
       params: {
         function: 'TIME_SERIES_INTRADAY',
         symbol: stockSymbol,
@@ -38,7 +38,7 @@ export class AlphavantageService {
    * @param stockSymbol the stock indices you want to research
    */
   getTimeSeriesDaily(stockSymbol: string, outputSize: 'compact' | 'full' = 'compact') {
-    return this.http.get<AlphavantageResponse>(this.apiURL, {
+    return this.http.get<AlphavantageDailyResponse>(this.apiURL, {
       params: {
         function: 'TIME_SERIES_DAILY',
         symbol: stockSymbol,

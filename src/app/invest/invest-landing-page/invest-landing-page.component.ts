@@ -1,8 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AlphavantageService} from '../services/alphavantage.service';
-import {NavigationExtras} from '@angular/router';
-import {BaseChartDirective} from 'ng2-charts';
-import {AlphavantageResponse} from '../models/alphavantage.model';
+import {AlphavantageDailyResponse, ChartDisplayModel, StockInfoDetails} from '../models/alphavantage.model';
 
 @Component({
   selector: 'app-invest-landing-page',
@@ -10,27 +8,31 @@ import {AlphavantageResponse} from '../models/alphavantage.model';
   styleUrls: ['./invest-landing-page.component.css']
 })
 export class InvestLandingPageComponent implements OnInit {
-  stockIntraday: AlphavantageResponse;
-  stockDaily: AlphavantageResponse;
+  stockDailyDisplay: ChartDisplayModel[] = [];
 
   constructor(private alphaService: AlphavantageService) {
   }
 
   ngOnInit() {
-    this.getTimeSeriesIntraDay('MSFT');
-
+    console.log('simple date', new Date(2019, 9, 13));
     this.getTimeSeriesDaily('AAPL');
   }
 
-  getTimeSeriesIntraDay(stockSymbol: string) {
-    this.alphaService.getTimeSeriesIntraDay(stockSymbol).subscribe(resp => {
-      this.stockIntraday = resp;
-    });
-  }
-
   getTimeSeriesDaily(stockSymbol: string) {
-    this.alphaService.getTimeSeriesDaily(stockSymbol).subscribe(resp => {
-      this.stockDaily = resp;
+    this.alphaService.getTimeSeriesDaily(stockSymbol).subscribe((resp: AlphavantageDailyResponse) => {
+      console.log(resp);
+      for (const [key, value] of Object.entries(resp['Time Series (Daily)'])) {
+        const s: ChartDisplayModel = {
+          time: new Date(key),
+          open: value['1. open'],
+          high: value['2. high'],
+          low: value['3. low'],
+          close: value['4. close'],
+          volume: value['5. volume']
+        };
+        this.stockDailyDisplay.push(s);
+      }
+      console.log(this.stockDailyDisplay);
     });
   }
 

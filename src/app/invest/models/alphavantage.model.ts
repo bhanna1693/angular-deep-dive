@@ -1,6 +1,18 @@
-export interface AlphavantageResponse {
+export interface AlphavantageDailyResponse {
   MetaData: MetaData;
-  TimeSeries: StockInfo[];
+  'Time Series (Daily)': StockInfo;
+}
+
+export interface StockInfo {
+  [key: string]: StockInfoDetails;
+}
+
+export interface StockInfoDetails {
+  '1. open': string;
+  '2. high': string;
+  '3. low': string;
+  '4. close': string;
+  '5. volume': string;
 }
 
 export interface MetaData {
@@ -12,14 +24,12 @@ export interface MetaData {
   TimeZone: string;
 }
 
-export interface StockInfo {
-  dateTime: {
-    open: string;
-    high: string;
-    low: string;
-    close: string;
-    volume: string;
-  };
+export interface ChartDisplayModel {
+  time: Date;
+  open: string;
+  high: string;
+  low: string;
+  close: string;
+  volume: string;
 }
-
 
