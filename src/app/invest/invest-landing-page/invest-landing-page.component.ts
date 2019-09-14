@@ -23,7 +23,7 @@ export class InvestLandingPageComponent implements OnInit {
       console.log(resp);
       for (const [key, value] of Object.entries(resp['Time Series (Daily)'])) {
         const s: ChartDisplayModel = {
-          time: new Date(key),
+          time: new Date(key).toString(),
           open: value['1. open'],
           high: value['2. high'],
           low: value['3. low'],

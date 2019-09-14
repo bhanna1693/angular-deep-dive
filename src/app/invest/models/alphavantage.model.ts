@@ -25,7 +25,7 @@ export interface MetaData {
 }
 
 export interface ChartDisplayModel {
-  time: Date;
+  time: string;
   open: string;
   high: string;
   low: string;
