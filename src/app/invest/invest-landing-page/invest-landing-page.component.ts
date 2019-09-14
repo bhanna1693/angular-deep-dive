@@ -8,23 +8,27 @@ import {NavigationExtras} from '@angular/router';
   styleUrls: ['./invest-landing-page.component.css']
 })
 export class InvestLandingPageComponent implements OnInit {
-  stock: any;
+  stockIntraday: any;
+  stockDaily: any;
 
   constructor(private alphaService: AlphavantageService) {
   }
 
   ngOnInit() {
-    this.getTimeSeriesIntraDay('compact');
+    this.getTimeSeriesIntraDay('MSFT');
+
+    this.getTimeSeriesDaily('AAPL');
   }
 
+  getTimeSeriesIntraDay(stockSymbol: string) {
+    this.alphaService.getTimeSeriesIntraDay(stockSymbol).subscribe(resp => {
+      this.stockIntraday = resp;
+    });
+  }
 
-  /**
-   * @param outputSize='compact' returns only the latest 100 data points in the intraday time series
-   * @param outputSize='full' returns the full-length intraday time series
-   */
-  getTimeSeriesIntraDay(outputSize: 'compact' | 'full') {
-    this.alphaService.getTimeSeriesIntraDay(outputSize).subscribe(resp => {
-      this.stock = resp;
+  getTimeSeriesDaily(stockSymbol: string) {
+    this.alphaService.getTimeSeriesDaily(stockSymbol).subscribe(resp => {
+      this.stockDaily = resp;
     });
   }
 
