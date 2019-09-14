@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {AlphavantageService} from '../services/alphavantage.service';
 import {NavigationExtras} from '@angular/router';
+import {BaseChartDirective} from 'ng2-charts';
+import {AlphavantageResponse} from '../models/alphavantage.model';
 
 @Component({
   selector: 'app-invest-landing-page',
@@ -8,8 +10,8 @@ import {NavigationExtras} from '@angular/router';
   styleUrls: ['./invest-landing-page.component.css']
 })
 export class InvestLandingPageComponent implements OnInit {
-  stockIntraday: any;
-  stockDaily: any;
+  stockIntraday: AlphavantageResponse;
+  stockDaily: AlphavantageResponse;
 
   constructor(private alphaService: AlphavantageService) {
   }

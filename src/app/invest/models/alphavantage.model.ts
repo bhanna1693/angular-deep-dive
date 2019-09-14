@@ -13,11 +13,13 @@ export interface MetaData {
 }
 
 export interface StockInfo {
-  open: string;
-  high: string;
-  low: string;
-  close: string;
-  volume: string;
+  dateTime: {
+    open: string;
+    high: string;
+    low: string;
+    close: string;
+    volume: string;
+  };
 }
 
 
