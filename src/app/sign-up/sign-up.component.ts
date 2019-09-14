@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-about-investing',
@@ -10,7 +11,8 @@ export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   isSubmitted = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     this.isSubmitted = true;
     if (this.signUpForm.valid) {
-      return;
+      this.router.navigate(['/invest']);
     }
   }
 }
