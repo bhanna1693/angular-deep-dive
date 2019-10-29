@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,7 +6,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  @Output() handleSideNavClick: EventEmitter<boolean> = new EventEmitter<boolean>(false);
+  @Input() sideNavStatus: boolean;
+  @Output() sideNavClick: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() {
   }
@@ -15,7 +16,7 @@ export class NavComponent implements OnInit {
   }
 
   onSideNavMenuClick() {
-    this.handleSideNavClick.emit(true);
+    this.sideNavClick.emit(!this.sideNavStatus);
   }
 
 }

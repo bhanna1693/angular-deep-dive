@@ -17,8 +17,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openSideNav() {
-    this.sidenav.open();
+  handleSideNavMenuClick(sideNavStatus: boolean) {
+    sideNavStatus ? this.sidenav.open() : this.sidenav.close();
   }
 
   closeSideNav() {
