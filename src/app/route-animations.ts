@@ -16,7 +16,8 @@ export const fadeAnimation = trigger('fadeAnimation', [
         position: 'absolute',
         top: 0,
         left: 0,
-        width: '100%'
+        width: '100%',
+        padding: '0 2em'
       })],
       {optional: true}
     ),
