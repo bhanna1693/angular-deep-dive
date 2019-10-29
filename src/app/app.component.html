@@ -2,9 +2,9 @@
 <mat-sidenav-container (backdropClick)="closeSideNav()">
   <mat-sidenav #sidenav (keydown.escape)="closeSideNav()" position="end">SideNav</mat-sidenav>
   <mat-sidenav-content>
-    <section>
-      <router-outlet></router-outlet>
-    </section>
+    <main [@fadeAnimation]="o && o.isActivated ? o.activatedRoute : ''">
+      <router-outlet #o="outlet"></router-outlet>
+    </main>
     <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

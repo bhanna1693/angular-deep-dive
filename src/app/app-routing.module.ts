@@ -6,10 +6,10 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 
 const appRoutes: Routes = [
-  {
-    path: 'invest',
-    loadChildren: () => import('./invest/invest.module').then(m => m.InvestModule)
-  },
+  // {
+  //   path: 'invest',
+  //   loadChildren: () => import('./invest/invest.module').then(m => m.InvestModule)
+  // },
   {
     path: 'sign-up',
     component: SignUpComponent
