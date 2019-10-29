@@ -1,0 +1,13 @@
+.toolbar-header {
+  padding-left: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none
+}
+
+button.hamburger-btn {
+  height: 100%;
+  margin: 0 8px 0 0;
+}

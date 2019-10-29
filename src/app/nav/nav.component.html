@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row style="display: flex; justify-content: space-between">
-    <a style="color: white; text-decoration: none" [routerLink]="['/']">Angular Playground</a>
-    <mat-icon style="cursor:pointer;" (click)="onSideNavMenuClick()">menu</mat-icon>
+  <mat-toolbar-row class="toolbar-header">
+    <button class="hamburger-btn" mat-button (click)="onSideNavMenuClick()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a [routerLink]="['/']">Angular Playground</a>
   </mat-toolbar-row>
 </mat-toolbar>
