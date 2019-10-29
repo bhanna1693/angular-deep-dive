@@ -14,6 +14,7 @@ import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BudgetCalculatorComponent } from './budget-calculator/budget-calculator.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { environment } from '../environments/environment';
     FooterComponent,
     SignUpComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BudgetCalculatorComponent
   ],
   imports: [
     BrowserModule,

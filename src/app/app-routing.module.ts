@@ -3,13 +3,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {SignUpComponent} from './sign-up/sign-up.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {BudgetCalculatorComponent} from './budget-calculator/budget-calculator.component';
 
 
 const appRoutes: Routes = [
-  // {
-  //   path: 'invest',
-  //   loadChildren: () => import('./invest/invest.module').then(m => m.InvestModule)
-  // },
+  {
+    path: 'budget-calculator',
+    component: BudgetCalculatorComponent
+  },
   {
     path: 'sign-up',
     component: SignUpComponent
