@@ -12,10 +12,16 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" matInput formControlName="Email" placeholder="Email" required>
-    <mat-error *ngIf="signUpForm.get('Email').hasError('required')">Email is required</mat-error>
-    <mat-error *ngIf="signUpForm.get('Email').hasError('email')">Email format invalid</mat-error>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+
+<!--  <mat-form-field>-->
+<!--    <input type="text" matInput formControlName="Email" placeholder="Email" required>-->
+<!--    <mat-error *ngIf="signUpForm.get('Email').hasError('required')">Email is required</mat-error>-->
+<!--    <mat-error *ngIf="signUpForm.get('Email').hasError('email')">Email format invalid</mat-error>-->
+<!--  </mat-form-field>-->
 
   <button style="margin-top: 1em" mat-raised-button color="primary" (click)="onSubmit()">Start Learning like a Pro</button>
 </form>
