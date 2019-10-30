@@ -10,7 +10,6 @@ import {fadeAnimation} from './route-animations';
 })
 export class AppComponent implements OnInit {
   @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
-  mode: 'side' | 'over' | 'push' = 'side';
 
   constructor() {
   }
