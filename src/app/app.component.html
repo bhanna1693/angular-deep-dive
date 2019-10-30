@@ -1,4 +1,4 @@
-<app-nav [sideNavState]="sidenav.opened" (sideNavClick)="handleSideNavMenuClick($event)"></app-nav>
+<app-nav *ngIf="sidenav" [sideNavState]="sidenav.opened" (sideNavClick)="handleSideNavMenuClick($event)"></app-nav>
 
 
 <mat-sidenav-container (backdropClick)="closeSideNav()">
