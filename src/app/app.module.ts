@@ -12,11 +12,10 @@ import {SignUpComponent} from './sign-up/sign-up.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { BudgetCalculatorComponent } from './budget-calculator/budget-calculator.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {environment} from '../environments/environment';
+import {BudgetCalculatorComponent} from './budget-calculator/budget-calculator.component';
 import {TextMaskModule} from 'angular2-text-mask';
-import { DateMaskDirective } from './date-mask.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,6 @@ import { DateMaskDirective } from './date-mask.directive';
     HomeComponent,
     PageNotFoundComponent,
     BudgetCalculatorComponent,
-    DateMaskDirective
   ],
   imports: [
     BrowserModule,
@@ -38,7 +36,7 @@ import { DateMaskDirective } from './date-mask.directive';
     ReactiveFormsModule,
     MaterialModule,
     TextMaskModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
   ],
   providers: [],
   bootstrap: [AppComponent]
