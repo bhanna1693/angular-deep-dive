@@ -15,6 +15,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BudgetCalculatorComponent } from './budget-calculator/budget-calculator.component';
+import {TextMaskModule} from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BudgetCalculatorComponent } from './budget-calculator/budget-calculator
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    TextMaskModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],

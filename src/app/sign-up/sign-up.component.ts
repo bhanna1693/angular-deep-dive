@@ -29,6 +29,7 @@ import {Router} from '@angular/router';
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   isSubmitted = false;
+  dateInputMask = [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/];
 
   constructor(private fb: FormBuilder,
               private router: Router) {
@@ -36,13 +37,14 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit() {
     this.signUpForm = this.buildForm();
+    this.signUpForm.get('Dob').valueChanges.subscribe(vc => console.log(vc));
   }
 
   buildForm(): FormGroup {
     return this.fb.group({
       FirstName: [''],
       LastName: [''],
-      Dob: ['']
+      Dob: ['', Validators.required]
       // Email: ['', [Validators.required, Validators.email]],
     });
   }
