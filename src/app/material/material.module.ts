@@ -55,7 +55,7 @@ import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule} from '@angular/mat
     MatIconModule
   ],
   providers: [
-    {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}
+    // {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}
   ],
 })
 export class MaterialModule {

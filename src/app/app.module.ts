@@ -16,6 +16,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BudgetCalculatorComponent } from './budget-calculator/budget-calculator.component';
 import {TextMaskModule} from 'angular2-text-mask';
+import { DateMaskDirective } from './date-mask.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {TextMaskModule} from 'angular2-text-mask';
     SignUpComponent,
     HomeComponent,
     PageNotFoundComponent,
-    BudgetCalculatorComponent
+    BudgetCalculatorComponent,
+    DateMaskDirective
   ],
   imports: [
     BrowserModule,
