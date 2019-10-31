@@ -11,14 +11,20 @@
     <input type="text" matInput formControlName="LastName" placeholder="Last Name">
   </mat-form-field>
 
-  <app-datepicker formControlName="Dob"></app-datepicker>
+  <mat-form-field>
+    <input matInput [matDatepicker]="dp" placeholder="Date of Birth" formControlName="Dob" required>
+    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp></mat-datepicker>
+    <mat-error *ngIf="signUpForm.get('Dob').hasError('required')">Date of Birth is required</mat-error>
+  </mat-form-field>
 
-<!--  <mat-form-field>-->
-<!--    <input type="text" matInput formControlName="Email" placeholder="Email" required>-->
-<!--    <mat-error *ngIf="signUpForm.get('Email').hasError('required')">Email is required</mat-error>-->
-<!--    <mat-error *ngIf="signUpForm.get('Email').hasError('email')">Email format invalid</mat-error>-->
-<!--  </mat-form-field>-->
 
-  <button [disabled]="signUpForm.invalid" style="margin-top: 1em" mat-raised-button color="primary" (click)="onSubmit()">Sign Up</button>
+  <mat-form-field>
+    <input type="text" matInput formControlName="Email" placeholder="Email" required>
+    <mat-error *ngIf="signUpForm.get('Email').hasError('required')">Email is required</mat-error>
+    <mat-error *ngIf="signUpForm.get('Email').hasError('email')">Email format invalid</mat-error>
+  </mat-form-field>
+
+  <button style="margin-top: 1em" mat-raised-button color="primary" (click)="onSubmit()">Sign Up</button>
 </form>
 
