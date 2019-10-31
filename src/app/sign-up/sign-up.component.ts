@@ -45,7 +45,6 @@ export const MY_FORMATS = {
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
-  isSubmitted = false;
 
   constructor(private fb: FormBuilder,
               private router: Router) {
@@ -60,13 +59,13 @@ export class SignUpComponent implements OnInit {
     return this.fb.group({
       FirstName: [''],
       LastName: [''],
-      Dob: ['', Validators.required],
+      Dob: [moment('', 'YYYY-MM-DD').toISOString(), Validators.required],
       Email: ['', [Validators.required, Validators.email]],
     });
   }
 
   onSubmit() {
-    this.isSubmitted = true;
+    this.signUpForm.markAllAsTouched();
     if (this.signUpForm.valid) {
       this.router.navigate(['/invest']);
     }

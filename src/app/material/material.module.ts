@@ -10,7 +10,7 @@ import {
   MatSortModule,
   MatTableModule, MatTabsModule, MatToolbarModule
 } from '@angular/material';
-import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule} from '@angular/material-moment-adapter';
+import { MatMomentDateModule} from '@angular/material-moment-adapter';
 
 
 @NgModule({
@@ -54,9 +54,7 @@ import {MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule} from '@angular/mat
     MatSidenavModule,
     MatIconModule
   ],
-  providers: [
-    // {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {strict: true}}
-  ],
+  providers: [],
 })
 export class MaterialModule {
 }
